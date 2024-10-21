@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://img.freepik.com/premium-photo/abstract-blur-coffee-shop-cafe-restaurant-background_1235831-284379.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+  }
+  
+  header {
+    background-color: rgba(44, 62, 80, 0.8); /* Yarim shaffof fon */
+    color: #ecf0f1;
+    padding: 10px 0;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .header-logos .header-logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .price-product {
+    padding-top: 10px;
+  }
+  nav ul {
+    display: flex;
+   
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #1abc9c;
+  }
+  
+  #intro {
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  #intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #intro p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  #intro .btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  #intro .btn:hover {
+    background-color: #16a085;
+  }
+  
+  .container {
+    max-width: 1200px;
+    animation: fadeIn 0.4s ease-in;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #menu, #about, #contact {
+    background-color: rgba(255, 255, 255, 0.9); /* Yarim shaffof oq fon */
+    padding: 50px 0;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  #menu h2, #about h2, #contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .dishes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: rgba(229, 236, 243, 0.8); /* Yarim shaffof fon */
+  }
+  
+  .dish {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .dish img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .dish h3 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+  }
+  
+  .dish p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .dish .btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .dish .btn:hover {
+    background-color: #16a085;
+  }
+  .numbers {
+    font-size: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-content: normal;
+  }
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.1px; /* Kichraytirilgan */
+    text-align: center;
+    animation: fadeIn 0.4s ease-in;
+    color: #ecf0f1;
+    margin-top: auto; /* Eng pastda turishini ta'minlaydi */
+  }
+  /* Oldingi CSS kodlariga qo'shimcha */
+.dish {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .dish img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .dish h3 {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+  
+  .dish .btn {
+    display: block;
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .dish .btn:hover {
+    background-color: #16a085;
+  }
+  /* Qo'shimchalar va yangi dizayn elementlari */
+
+/* Yangi animatsiya */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.detail-btn {
+    background: #1e90ff; /* Tugma rangi */
+    color: #fff; /* Matn rangi */
+    border: none; /* Chegarasiz */
+    padding: 10px 20px; /* Ichki masofa */
+    font-size: 1em; /* Matn o'lchami */
+    border-radius: 5px; /* Burchaklar yumshatilgan */
+    cursor: pointer; /* Kursor ko'rsatuvchi */
+    transition: background 0.3s, transform 0.3s; /* O'zgarishlar uchun vaqt */
+    margin-top: 20px; /* Yuqoridan masofa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soyalar */
+    z-index: 100;
+}
+
+.detail-btn:hover {
+    background: #0e76a8; /* Hover holatidagi rangi */
+    transform: translateY(-3px); /* Yuqoriga ko'tarish */
+}
+
+.detail-btn:active {
+    transform: translateY(1px); /* Bosilganda pastga tushishi */
+}
+
+
+/* Bo'limlar uchun animatsiya */
+#menu, #about, #contact {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Dastur bo'yicha tavsiya etilgan o'zgarishlar */
+.dish {
+    transition: transform 0.3s;
+}
+
+.dish:hover {
+    transform: scale(1.05);
+}
+
+/* Mobil qurilmalar uchun responsiv dizayn */
+@media (max-width: 768px) {
+    .dishes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dish {
+        max-width: 90%; /* Kichik ekranlarda kenglikni 90% ga o'zgartiramiz */
+        margin: 10px 0; /* Marginni o'zgartiramiz */
+    }
+
+    header h1 {
+        font-size: 20px; /* Sarlavha o'lchamini kichraytiramiz */
+    }
+
+    #intro h2 {
+        font-size: 28px; /* Katta sarlavhani kichraytiramiz */
+    }
+}
+
+/* Tizim dizayni */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Barcha elementlarni markazga joylashtiramiz */
+}
+
+/* Yangiliklar bo'limi */
+.news {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+/* Yangiliklar sarlavhasi */
+.news h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Yangiliklar matni */
+.news p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Ijtimoiy tarmoqlar */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2); /* Hoverda rasmni kattalashtiramiz */
+}
+
+/* Foydalanuvchi interfeysi */
+.feedback {
+    background-color: rgba(44, 62, 80, 0.8);
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.feedback h3 {
+    text-align: center;
+}
+
+/* Yana qo'shimchalar */
+.btn-large {
+    padding: 15px 30px; /* Katta tugma uchun padding */
+    font-size: 1.1em; /* O'lcham */
+}
+
+/* Animatsiya */
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}

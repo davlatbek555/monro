@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahsulot Batafsil</title>
+  <link rel="stylesheet" href="css/product.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Xabar uchun stil */
+    .modal {
+      display: none; /* Boshlanishda ko'rinmaydi */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Yuqorida bo'lishi uchun */
+    }
+
+    .modal-content {
+      background-color: rgba(0, 0, 0, 0.8);
+      ;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .close-button, .confirm-button {
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 5px; /* Tugmalar orasidagi masofa */
+    }
+
+    .close-button {
+      background-color: #ff5722;
+      color: white;
+    }
+
+    .confirm-button {
+      background-color: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Mahsulot Batafsil</h1>
+    </div>
+  </header>
+
+  <main>
+    <div id="product-details">
+        <div class="product-info">
+            <!-- Mahsulot tafsilotlari -->
+            <img id="product-image" src="" alt="Mahsulot rasmi">
+            <h3 id="product-name"></h3>
+            <p id="product-price"></p>
+        </div>
+        <div class="button-container">
+            <button class="back-button">Orqaga</button>
+            <button class="order-button">Buyurtma Qilish</button>
+        </div>
+    </div>
+
+    <!-- Xabar bo'limi -->
+    <div class="modal" id="orderModal">
+      <div class="modal-content">
+        <p>Online buyurtma berish hozircha mavjud emas. Telefon qilib buyurtma qilishga rozimisiz?</p>
+        <button class="confirm-button">Ha</button>
+        <button class="close-button">Yopish</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Biz bilan bog'laning:</p>
+    <div class="social-links">
+      <a href="https://instagram.com/monro_kafe_3"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="https://telegram.org"><img src="images/telegram.png" alt="Telegram"></a>
+      <a href="https://www.google.com/maps/dir//HJ76%2BGJ6+Monro+kafe,+Urganch,+Xorazm+Viloyati/@41.5640906,60.6114678,1184m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x41dfc90010410659:0x759d3da484ebe3de!2m2!1d60.6114697!2d41.563733!5m1!1e2?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"><img src="images/map.png" alt="Joylashuv"></a>
+      <a href="tel:+998918624343" class="call-button">
+        <img src="images/call.png" alt="Call" class="social-icon">
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript faylini qo'shish -->
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // URL dan mahsulot nomini olish
+        const params = new URLSearchParams(window.location.search);
+        const productName = params.get('name');
+
+        // Mahsulot ma'lumotlarini olish
+        const product = initialDishes.find(dish => dish.name === productName);
+
+        // Agar mahsulot topilsa, ma'lumotlarni ko'rsatish
+        if (product) {
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-price').textContent = `Narxi: ${product.price} so'm`;
+        } else {
+            console.error("Mahsulot topilmadi.");
+        }
+
+        // Orqaga va buyurtma tugmalari
+        const orderButton = document.querySelector('.order-button');
+        const backButton = document.querySelector('.back-button');
+        const orderModal = document.getElementById('orderModal');
+        const closeButton = document.querySelector('.close-button');
+        const confirmButton = document.querySelector('.confirm-button');
+
+        // Buyurtma tugmasi
+        if (orderButton) {
+            orderButton.addEventListener('click', () => {
+                orderModal.style.display = 'flex'; // Modalni ko'rsatish
+            });
+        }
+
+        // Orqaga tugmasi
+        if (backButton) {
+            backButton.addEventListener('click', () => {
+                window.history.back(); // Orqaga qaytish
+            });
+        }
+
+        // Modal yopish
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                orderModal.style.display = 'none'; // Modalni yashirish
+            });
+        }
+
+        // Ha tugmasi
+        if (confirmButton) {
+            confirmButton.addEventListener('click', () => {
+                window.location.href = 'tel:+998918624343'; // Telefon raqamiga qo'ng'iroq
+            });
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+/* Umumiy uslublar */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://img.freepik.com/premium-photo/abstract-blur-coffee-shop-cafe-restaurant-background_1235831-284379.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden; /* Gorizontal skrollni oldini olish */
+    min-height: 100vh; /* Minimal balandlik */
+    display: flex;
+    flex-direction: column; /* Flex konteyner sifatida o'rnatildi */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px; /* Kichraytirilgan */
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+h1 {
+    font-size: 2em; /* Kichraytirilgan */
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    flex: 1; /* Bu joyni kengaytiradi */
+}
+
+/* Mahsulotlar bo'limi */
+#product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px; /* Kichraytirilgan */
+    animation: fadeIn 1s ease-in;
+}
+
+.product-info {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px; /* Kichraytirilgan */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1s ease-in;
+    width: 100%; /* To'liq kenglikni ta'minlash */
+    max-width: 500px; /* Maksimal kenglikni kichraytirish */
+    text-align: center; /* Matnni markazlashtirish */
+}
+
+#product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+#product-image:hover {
+    transform: scale(1.05);
+}
+
+h3 {
+    font-size: 1.5em; /* Kichraytirilgan */
+    margin: 10px 0; /* Kichraytirilgan */
+}
+
+p {
+    font-size: 1em; /* Kichraytirilgan */
+    margin: 5px 0;
+}
+
+/* Orqaga qaytish tugmasi */
+.back-button {
+    background: #ff4757;
+    color: #fff;
+    border: none;
+    padding: 8px 15px; /* Kichraytirilgan */
+    font-size: 1em; /* Kichraytirilgan */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    animation: fadeInUp 1s ease-in;
+}
+
+.back-button:hover {
+    background: #e84118;
+    transform: scale(1.05);
+}
+
+/* Batafsil tugmasi */
+.detail-btn {
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px; /* Kichraytirilgan */
+    font-size: 1em; /* Kichraytirilgan */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+.detail-btn:hover {
+    background: #0e76a8;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px; /* Kichraytirilgan */
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+    margin-top: auto; /* Eng pastda turishini ta'minlaydi */
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 8px; /* Kichraytirilgan */
+}
+
+.social-links img {
+    width: 25px; /* Kichraytirilgan */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Animatsiyalar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media so'zlari */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; /* Kichraytirilgan */
+    }
+
+    h3 {
+        font-size: 1.3em; /* Kichraytirilgan */
+    }
+
+    p {
+        font-size: 0.9em; /* Kichraytirilgan */
+    }
+
+    .back-button {
+        padding: 6px 10px; /* Kichraytirilgan */
+        font-size: 0.9em; /* Kichraytirilgan */
+    }
+
+    .detail-btn {
+        padding: 6px 10px; /* Kichraytirilgan */
+        font-size: 0.9em; /* Kichraytirilgan */
+    }
+}
+
+/* Boshqa uslublar */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Qo'shimcha effektlar */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.scale-up {
+    animation: scaleUp 0.5s forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+title {
+    color: violet;
+}
+.button-container {
+    display: flex; /* Tugmalarni yonma-yon joylashtirish */
+    gap: 10px; /* Tugmalar orasidagi masofa */
+    margin-top: 20px; /* Tugmalar orasidagi masofa */
+}
+
+.order-button {
+    background: #28a745; /* Tugma rangi */
+    color: #fff; /* Matn rangi */
+    border: none; /* Chegarasiz */
+    padding: 10px 20px; /* Ichki masofa */
+    font-size: 1em; /* Matn o'lchami */
+    border-radius: 5px; /* Burchaklar yumshatilgan */
+    cursor: pointer; /* Kursor ko'rsatuvchi */
+    transition: background 0.3s, transform 0.3s; /* O'zgarishlar uchun vaqt */
+}
+
+.order-button:hover {
+    background: #218838; /* Hover holatidagi rangi */
+    transform: translateY(-3px); /* Yuqoriga ko'tarish */
+}
+
+.order-button:active {
+    transform: translateY(1px); /* Bosilganda pastga tushishi */
+}
