@@ -140,6 +140,42 @@ dishesContainer.addEventListener("click", function(event) {
     }
 });
 
+// Qidiruv funksiyasi
+document.getElementById('searchBtn').addEventListener('click', function() {
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+    const results = initialDishes.filter(dish => 
+        dish.name.toLowerCase().startsWith(searchTerm) // Faqat nom boshidan mos kelishini tekshirish
+    );
+    
+    displayResults(results);
+});
+
+
+
+// Natijalarni ko'rsatish
+function displayResults(results) {
+    const dishesContainer = document.getElementById('dishes');
+    dishesContainer.innerHTML = ''; // Eski natijalarni tozalash
+
+    if (results.length > 0) {
+        results.forEach(dish => {
+            const dishElement = document.createElement("div");
+            dishElement.className = "dish";
+
+            dishElement.innerHTML = `
+                <h3>${dish.name}</h3>
+                <img src="${dish.image}" alt="${dish.name}">
+                <p class="price-product">Narxi: ${dish.price} so'm</p>
+                <button class="detail-btn" data-name="${dish.name}">Batafsil</button>
+            `;
+
+            dishesContainer.appendChild(dishElement);
+        });
+    } else {
+        dishesContainer.innerHTML = '<p>Mahsulot topilmadi.</p>';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const orderButton = document.querySelector('.order-button');
     const backButton = document.querySelector('.back-button');
